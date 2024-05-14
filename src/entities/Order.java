@@ -52,14 +52,18 @@ public class Order {
 	}
 
 	public Double total() {
-	//FAZER FUNCIONAR
+		double total = 0.0;
+		for (OrderItem items : items) {
+			total = total + items.subTotal();
+		}
+		return total;
 	}
-	
+
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Order moment: " + moment);
-		sb.append("\n Order Status:" + status);
+		sb.append("\nOrder Status:" + status);
 		return sb.toString();
 	}
 

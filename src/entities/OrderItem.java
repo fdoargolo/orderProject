@@ -46,7 +46,7 @@ public class OrderItem {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(product.getName() + ", Quantity: " + quantity);
-		sb.append(" Subtotal: " + subTotal());
+		sb.append(" Subtotal: $" + subTotal());
 		return sb.toString();
 	}
 

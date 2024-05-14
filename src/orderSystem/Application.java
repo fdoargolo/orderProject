@@ -38,7 +38,7 @@ public class Application {
 		System.out.print("How many items to this order? ");
 		int itemsQuantity = scanner.nextInt();
 		scanner.nextLine();
-		
+
 		OrderItem item = new OrderItem();
 
 		for (int i = 0; i < itemsQuantity; i++) {
@@ -62,11 +62,11 @@ public class Application {
 		System.out.println("ORDER SUMMARY:");
 		System.out.println(order);
 		System.out.println(client);
-		System.out.println("Order items");
+		System.out.println("Order items:");
 		for (OrderItem items : order.getItems()) {
 			System.out.println(items);
 		}
-		System.out.println("\n Total price:" + order.total()); //Create the function TOTAL (Order.java)
+		System.out.println("Total price:" + order.total());
 
 	}
 
