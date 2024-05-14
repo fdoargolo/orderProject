@@ -1,11 +1,14 @@
 package entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Client {
 	private String name;
 	private String email;
 	private LocalDate birthDate;
+
+	private DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 	public Client(String name, String email, LocalDate birthDate) {
 		this.name = name;
@@ -41,7 +44,7 @@ public class Client {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Client: " + name);
-		sb.append(" (" + birthDate + ") - " + email);
+		sb.append(" (" + birthDate.format(fmt) + ") - " + email);
 		return sb.toString();
 	}
 

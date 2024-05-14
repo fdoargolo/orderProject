@@ -1,6 +1,7 @@
 package entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,7 @@ public class Order {
 
 	private List<OrderItem> items = new ArrayList<>();
 	private Client client;
+	private DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 	public Order(LocalDate moment, OrderStatus status, Client client) {
 		this.moment = moment;
@@ -62,7 +64,7 @@ public class Order {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Order moment: " + moment);
+		sb.append("Order moment: " + moment.format(fmt));
 		sb.append("\nOrder Status:" + status);
 		return sb.toString();
 	}

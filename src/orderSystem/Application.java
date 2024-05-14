@@ -15,7 +15,7 @@ public class Application {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	    DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter client data;");
@@ -54,10 +54,9 @@ public class Application {
 			Product product = new Product(productName, productPrice);
 			item = new OrderItem(productQuantity, productPrice, product);
 			order.addItems(item);
-
 		}
+		
 		scanner.close();
-
 		System.out.println();
 		System.out.println("ORDER SUMMARY:");
 		System.out.println(order);
